@@ -7,21 +7,26 @@ class Color {
     }
 
     innerRGB() {
-        const { r, g, b } = this;
+        const {r, g, b} = this;
         return `${r}, ${g}, ${b}`;
     }
-    colorName() {
-        console.log('The color name is ' + this.name);
-    }
+
     rgb() {
-        
         return `rgb(${this.innerRGB()})`;
     }
+
     rgba(a = 1.0) {
         return `rgba(${this.innerRGB()}, ${a})`;
     }
+
     hex() {
-        const { r, g, b } = this;
+        const {r, g, b} = this;
         return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
     }
 }
+
+const carColor = new Color(255, 0, 0, 'carColor');
+console.log(carColor);
+console.log(carColor.rgb());
+console.log(carColor.rgba(0.5));
+console.log(carColor.hex());
